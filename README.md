@@ -119,7 +119,7 @@ Body:
 ```
 ##### Successful Response
 ```
-Response Code: 201
+Response Code: 200
 Body:   
 {
     "id": 2,
@@ -135,6 +135,117 @@ Deletes a single event
 ```
 Method: DELETE
 Url: /events/<event_id>/
+```
+##### Successful Response
+```
+Response Code: 204
+```
+
+#### List Sessions
+Retrieves all sessions in the database including their event ids.
+##### Request
+```
+Method: GET
+Url: /sessions/
+```
+##### Successful Response
+```
+Response Code: 200
+Body:   
+[
+    {
+        "id": 2,
+        "name": "Example Session",
+        "start_date": "2020-12-15T18:00:26+03:00",
+        "end_date": "2020-12-15T18:00:26+03:00",
+        "speaker": "Berat",
+        "event": 3
+    }
+]
+```
+#### Create Session
+Creates a new session in the db
+##### Request
+```
+Method: POST
+Url: /sessions/
+{
+    "name": "Example Session",
+    "start_date": "2020-12-15 18:00:26",
+    "end_date": "2020-12-15 18:00:26",
+    "time_zone": "UTC",
+    "speaker": "Berat",
+    "event": <event_id>
+}
+```
+##### Successful Response
+Retrieves the created reasource along with its database id.
+```
+Response Code: 201
+{
+    "id": 3,
+    "name": "Example Session",
+    "start_date": "2020-12-15T18:00:26+03:00",
+    "end_date": "2020-12-15T18:00:26+03:00",
+    "speaker": "Berat",
+    "event": 3
+}
+```
+#### Read Session
+Retrieves a single session
+##### Request
+```
+Method: GET
+Url: /sessions/<session_id>/
+```
+##### Successful Response
+```
+Response Code: 200
+Body:   
+{
+    "id": 3,
+    "name": "Example Session",
+    "start_date": "2020-12-15T18:00:26+03:00",
+    "end_date": "2020-12-15T18:00:26+03:00",
+    "speaker": "Berat",
+    "event": 3
+}
+```
+#### Update Session
+Updates a single session
+##### Request
+```
+Method: PUT
+Url: /sessions/<session_id>/
+Body:
+{
+    "name": "Different Session",
+    "start_date": "2020-12-15T18:00:26+03:00",
+    "end_date": "2020-12-15T18:00:26+03:00",
+    "time_zone": "UTC",
+    "speaker": "random_speaker",
+    "event": 3
+}
+```
+##### Successful Response
+```
+Response Code: 200
+Body:   
+{
+    "id": 3,
+    "name": "Different Session",
+    "start_date": "2020-12-15T18:00:26+03:00",
+    "end_date": "2020-12-15T18:00:26+03:00",
+    "speaker": "random_speaker",
+    "event": 3
+}
+```
+#### Delete Session
+Deletes a single session
+##### Request
+```
+Method: DELETE
+Url: /sessions/<session_id>/
 ```
 ##### Successful Response
 ```
