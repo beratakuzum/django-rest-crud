@@ -20,6 +20,7 @@ $ python manage.py runserver 0.0.0.0:80
 
 ##### Event Model Class
 ```python
+TIMEZONES = tuple(zip(pytz.all_timezones, pytz.all_timezones))
 class Event(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False)
     start_date = models.DateTimeField(null=False, blank=False)
