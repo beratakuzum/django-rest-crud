@@ -1,6 +1,6 @@
 # django-rest-crud
  
-django_rest_crud is an example REST API project to help understand Django Rest Framework.
+django-rest-crud is an example REST API project to help understand Django Rest Framework.
 
 ## How to run?
 You can simply run the project by creating a virtual environment, install the required packages and making the migrations. 
