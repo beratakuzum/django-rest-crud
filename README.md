@@ -1,4 +1,4 @@
-# django_rest_crud
+# django-rest-crud
  
 django_rest_crud is an example REST API project to help understand Django Rest Framework.
 
